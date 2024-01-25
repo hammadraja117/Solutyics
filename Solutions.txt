@@ -1,16 +1,4 @@
 Problem:
-How are you?
-
-Solution:
-I am fine.
-
-Problem:
-hi
-
-Solution:
-hello
-
-Problem:
 error 201
 
 Solution:
