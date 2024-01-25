@@ -15,3 +15,9 @@ error 201
 
 Solution:
 The 201 Created status code means that the request was successfully fulfilled and resulted in one or possibly multiple new resources being created.
+
+Problem:
+ValueError: Traceback (most recent call last) <ipython-input-15-d27c936e2293> in <module>()
+
+Solution:
+You're example code is close, but there are a few issues: First, there's a typo in the for loop, it should be  for row in reader: Second, it doesn't look like the datetime parser supports the date format where months and days are not zero filled. Therefore, use dateutil.parser:  from dateutil.parser import parse date = parse(row[0], dayfirst=False) Finally, csv doesn't like multiple spaces between fields. But you can define your own dialect which will solve it:  csv.register_dialect('dataformat', delimiter=' ', skipinitialspace=True) reader = csv.reader(file, dialect='dataformat')
